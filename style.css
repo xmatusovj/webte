@@ -1,0 +1,183 @@
+html *
+{
+    font-family: Verdana;
+    font-size: small;
+}
+
+body {
+    margin: 0;
+    background-color: #E9EBEE;
+}
+
+label {
+    margin: 5px;
+}
+
+table {
+    border: 1px solid #DDDFE2;
+    border-radius: 5px;
+    width: 96%;
+    margin-left: 2%;
+    margin-right: 2%;
+    background-color: white;
+}
+
+table, th {
+    text-align: center;
+}
+
+tr.gray {
+    background-color: #E9EBEE;
+}
+
+tr.white {
+    background-color: white;
+}
+
+td {
+    width: auto;
+    text-align: left;
+    empty-cells: hide;
+}
+
+th {
+    font-size: 110%;
+    width: auto;
+    border-bottom: 1px solid black;
+}
+
+ul.horizontal {
+    z-index: 19;
+    list-style-type: none;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #3F3F3F;
+    box-shadow: 0px 5px 7px grey;
+}
+
+ul.horizontal li {
+    float: left;
+    border-right: 1px solid #DDDFE2;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+ul.horizontal li:last-child {
+    border-right: none;
+}
+
+li a:hover {
+    background-color: #000000;
+}
+
+a.active {
+    background-color: #0052B2;
+}
+
+section {
+    border: 1px solid #DDDFE2;
+    background-color: white;
+    border-radius: 5px;
+    float: left;
+    padding-left: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 5rem;
+    width: 59%;
+    height:auto;
+}
+
+a.order {
+    text-decoration: none;
+    color: #0052b2;
+}
+
+a.nameLink {
+    text-decoration: none;
+    color: black;
+}
+
+a.goBack {
+    text-decoration: none;
+    color: #0052b2;
+}
+
+.logout {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+.logout:hover {
+    background-color: #000000;
+}
+
+.loggedinas {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+select {
+    margin: 5px;
+    border: none;
+    border-bottom: 1px solid #E9EBEE;
+}
+
+input {
+    margin: 5px;
+    border: none;
+    border-bottom: 1px solid #E9EBEE;
+}
+
+input:focus {
+    border-bottom: 2px solid #0052b2;
+}
+
+input:not(:focus) {
+    border-bottom: 1px solid #E9EBEE;
+}
+
+.errorMsg {
+    color: firebrick;
+    margin: 5px;
+}
+
+h2 {
+    margin: 5px;
+}
+
+h2.welcome {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+p {
+    margin: 5px;
+}
+
+img {
+    display: inline-block;
+    max-width: 13px;
+    max-height: 13px;
+}
