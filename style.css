@@ -128,6 +128,19 @@ a.goBack {
     background-color: #000000;
 }
 
+.lang {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 5px;
+    text-decoration: none;
+}
+
+.lang:hover {
+    background-color: #000000;
+}
+
 .loggedinas {
     float: right;
     display: block;
@@ -179,5 +192,9 @@ p {
 img {
     display: inline-block;
     max-width: 13px;
-    max-height: 13px;
+}
+
+img.langimg {
+    display: inline-block;
+    max-width: 19px;
 }
