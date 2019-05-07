@@ -81,8 +81,8 @@
 <body>
 <ul class=horizontal>
     <li><a class=active href="login.php"><?php echo TEXT_LOGIN?></a></li>
-    <a class="lang" href="login.php?lang=sk"><img class=langimg src="img/sk.png"></a>
-    <a class="lang" href="login.php?lang=en"><img class=langimg src="img/uk.png"></a>
+    <a class="lang" href="login.php?lang=sk"><img class=langimg src="img/sk.png" title="SK"></a>
+    <a class="lang" href="login.php?lang=en"><img class=langimg src="img/uk.png" title="EN"></a>
 </ul>
 
 <section>

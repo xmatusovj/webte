@@ -38,13 +38,33 @@
     <li><a href="uloha1.php"><?php echo TEXT_TASK1?></a></li>
     <li><a href="uloha2.php"><?php echo TEXT_TASK2?></a></li>
     <li><a href="uloha3.php"><?php echo TEXT_TASK3?></a></li>
-    <a class="logout" href="index.php?logout=1"><img src="img/turn-off.png"></a>
-    <a class="lang" href="index.php?lang=sk"><img class=langimg src="img/sk.png"></a>
-    <a class="lang" href="index.php?lang=en"><img class=langimg src="img/uk.png"></a>
+    <a class="logout" href="index.php?logout=1"><img src="img/turn-off.png" title="Log out"></a>
+    <a class="lang" href="index.php?lang=sk"><img class=langimg src="img/sk.png" title="SK"></a>
+    <a class="lang" href="index.php?lang=en"><img class=langimg src="img/uk.png" title="EN"></a>
 </ul>
 
 <section>
     <!-- Code here -->
+    <h2><?php echo TEXT_TASKS?></h2><br>
+    <table>
+        <tr>
+            <th><?php echo TEXT_NAME?></th>
+            <th><?php echo TEXT_TASK?></th>
+        </tr>
+        <tr>
+            <td>Jakub Matušov</td>
+            <td><?php echo TEXT_TASK1 . " + " . TEXT_LOGIN?></td>
+        </tr>
+        <tr>
+            <td>Michal Čirip + Tomáš Daniš</td>
+            <td><?php echo TEXT_TASK2?></td>
+        </tr>
+        <tr>
+            <td>Kristian Kalivoda + Jozef Maloch</td>
+            <td><?php echo TEXT_TASK3?></td>
+        </tr>
+    </table><br>
+    <a href=""><?php echo TEXT_DOCUMENTATION?></a>
 </section>
 
 </body>

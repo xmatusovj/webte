@@ -38,9 +38,9 @@
     <li><a href="uloha1.php"><?php echo TEXT_TASK1?></a></li>
     <li><a class=active href="uloha2.php"><?php echo TEXT_TASK2?></a></li>
     <li><a href="uloha3.php"><?php echo TEXT_TASK3?></a></li>
-    <a class="logout" href="uloha2.php?logout=1"><img src="img/turn-off.png"></a>
-    <a class="lang" href="uloha2.php?lang=sk"><img class=langimg src="img/sk.png"></a>
-    <a class="lang" href="uloha2.php?lang=en"><img class=langimg src="img/uk.png"></a>
+    <a class="logout" href="uloha2.php?logout=1"><img src="img/turn-off.png" title="Log out"></a>
+    <a class="lang" href="uloha2.php?lang=sk"><img class=langimg src="img/sk.png" title="SK"></a>
+    <a class="lang" href="uloha2.php?lang=en"><img class=langimg src="img/uk.png" title="EN"></a>
 </ul>
 
 <section>

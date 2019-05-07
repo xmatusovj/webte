@@ -26,17 +26,14 @@ table, th {
     text-align: center;
 }
 
-tr.gray {
-    background-color: #E9EBEE;
-}
 
-tr.white {
-    background-color: white;
-}
+tr:nth-child(odd) {background: white}
+
+tr:nth-child(even) {background: #E9EBEE}
 
 td {
     width: auto;
-    text-align: left;
+    text-align: center;
     empty-cells: hide;
 }
 
