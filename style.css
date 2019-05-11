@@ -87,13 +87,13 @@ section {
     border-radius: 5px;
     float: left;
     padding-left: 1%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     padding-bottom: 1rem;
     padding-top: 1rem;
     margin-bottom: 1rem;
     margin-top: 5rem;
-    width: 59%;
+    width: 79%;
     height:auto;
 }
 
@@ -170,6 +170,10 @@ input:not(:focus) {
 .errorMsg {
     color: firebrick;
     margin: 5px;
+}
+
+#invisible {
+    display: none !important;
 }
 
 h2 {

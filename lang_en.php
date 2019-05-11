@@ -14,4 +14,5 @@ define("TEXT_TASKS", "Division of tasks");
 define("TEXT_NAME", "Name");
 define("TEXT_DOCUMENTATION", "Technical documentation");
 define("TEXT_ADMINONLY", "Admin only");
+define("TEXT_CHOOSEYEAR", "Choose year");
 ?>

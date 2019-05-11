@@ -14,4 +14,5 @@ define("TEXT_TASKS", "Rozdelenie úloh");
 define("TEXT_NAME", "Meno");
 define("TEXT_DOCUMENTATION", "Technická dokumentácia");
 define("TEXT_ADMINONLY", "Iba pre admina");
+define("TEXT_CHOOSEYEAR", "Vyber rok");
 ?>

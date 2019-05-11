@@ -74,25 +74,25 @@
 <html lang="sk">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title><?php echo TEXT_TITLE?></title>
+    <title><?= TEXT_TITLE?></title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 <ul class=horizontal>
-    <li><a class=active href="login.php"><?php echo TEXT_LOGIN?></a></li>
+    <li><a class=active href="login.php"><?= TEXT_LOGIN?></a></li>
     <a class="lang" href="login.php?lang=sk"><img class=langimg src="img/sk.png" title="SK"></a>
     <a class="lang" href="login.php?lang=en"><img class=langimg src="img/uk.png" title="EN"></a>
 </ul>
 
 <section>
     <form action="login.php" method="POST" autocomplete="false" enctype="multipart/form-data">
-        <h2><?php echo TEXT_LOGIN?></h2><br>
-        <input type="radio" name="loginType" value="student" checked="checked"><?php echo TEXT_STUDENT?>
-        <input type="radio" name="loginType" value="admin" <?php if(isset($_POST['loginType']) && $_POST['loginType']=="admin") echo 'checked="checked"'; ?>><?php echo TEXT_ADMIN?><br><br>
+        <h2><?= TEXT_LOGIN?></h2><br>
+        <input type="radio" name="loginType" value="student" checked="checked"><?= TEXT_STUDENT?>
+        <input type="radio" name="loginType" value="admin" <?php if(isset($_POST['loginType']) && $_POST['loginType']=="admin") echo 'checked="checked"'; ?>><?= TEXT_ADMIN?><br><br>
         <input type="text" name="login" placeholder="Login" required><br>
-        <input type="password" name="password" pattern=".{6,}" placeholder="<?php echo TEXT_PASSWORD?>" readonly onfocus="this.removeAttribute('readonly');" required><br><br>
-        <input type="submit" value="<?php echo TEXT_BTN_LOGIN?>" name="signin"><br>
+        <input type="password" name="password" pattern=".{6,}" placeholder="<?= TEXT_PASSWORD?>" readonly onfocus="this.removeAttribute('readonly');" required><br><br>
+        <input type="submit" value="<?= TEXT_BTN_LOGIN?>" name="signin"><br>
         <?php
         if(isset($error) && !empty($error)){
             echo "<span class='errorMsg'>$error</span>";
