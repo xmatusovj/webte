@@ -13,4 +13,5 @@ define("TEXT_TASK3", "Task 3");
 define("TEXT_TASKS", "Division of tasks");
 define("TEXT_NAME", "Name");
 define("TEXT_DOCUMENTATION", "Technical documentation");
+define("TEXT_ADMINONLY", "Admin only");
 ?>

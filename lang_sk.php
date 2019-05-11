@@ -13,4 +13,5 @@ define("TEXT_TASK3", "Úloha 3");
 define("TEXT_TASKS", "Rozdelenie úloh");
 define("TEXT_NAME", "Meno");
 define("TEXT_DOCUMENTATION", "Technická dokumentácia");
+define("TEXT_ADMINONLY", "Iba pre admina");
 ?>

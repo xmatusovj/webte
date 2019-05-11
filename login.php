@@ -40,7 +40,7 @@
                 $row = $result->fetch_row();
 
                 if(password_verify($_POST['password'],$row[2])) {
-                    $_SESSION["user"]="adminlogin";
+                    $_SESSION["user"]=$row[1];
                     header("Location: https://147.175.121.210:4493/webte_zadanie/index.php");
                 }
                 else $error = "Chyba: Nesprávne heslo";

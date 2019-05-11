@@ -45,7 +45,31 @@
 
 <section>
     <!-- Code here -->
+    <?php
+    if (isAdmin($_SESSION['user'],$mysqli)) {
+
+    }
+
+    if (!isAdmin($_SESSION['user'],$mysqli)) {
+
+    }
+
+    ?>
 </section>
 
 </body>
 </html>
+
+<?php
+function isAdmin($name,$mysqli) {
+
+    $query = "SELECT id, login, password
+                      FROM admins
+                      WHERE login='".$name."'";
+    $result = $mysqli->query($query);
+    if(mysqli_num_rows($result)==1) {
+        return true;
+    }
+    else return false;
+}
+?>
