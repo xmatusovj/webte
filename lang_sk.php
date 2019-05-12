@@ -30,3 +30,6 @@ define("STUDENT_NAME", "Meno studenta");
 define("DATE", "Datum");
 define("TEMPLATE_ID", "ID Sablony");
 define("ERROR_SEND_EMAILS", "Nezadali see meno odosielatela, email odosielatela, heslo odosielatela, subjekt emailu, alebo subor s datami");
+define("TEXT_ADMINONLY", "Iba pre admina");
+define("TEXT_CHOOSEYEAR", "Vyber rok");
+?>

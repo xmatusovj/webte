@@ -1,5 +1,12 @@
 <?php
     session_start();
+    
+    include "config.php";
+    $mysqli = new mysqli($hostname,$username,$password,$db);
+    if ($mysqli->connect_error) {
+        die('Connect Error (' . $mysqli->connect_errno . ')' . $mysqli->connect_error);
+    }
+    $mysqli->set_charset("utf8");
 
     if (!isset($_SESSION['lang']) && (!isset($_GET['lang']) || $_GET['lang']=="sk")) {
         $_SESSION['lang']="sk";
@@ -31,7 +38,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="language" content="<?php echo $_SESSION['lang'] ?>">
-    <title><?php echo TEXT_TITLE?></title>
+    <title><?php= TEXT_TITLE?></title>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
@@ -40,16 +47,24 @@
 
 <body onload="fileDownloadHandler()" onunload="destroy_session()">
     <ul class=horizontal>
-        <li><a href="index.php"><?php echo TEXT_HOME?></a></li>
-        <li><a href="uloha1.php"><?php echo TEXT_TASK1?></a></li>
-        <li><a href="uloha2.php"><?php echo TEXT_TASK2?></a></li>
-        <li><a class=active href="uloha3.php"><?php echo TEXT_TASK3?></a></li>
+        <li><a href="index.php"><?= TEXT_HOME?></a></li>
+        <li><a href="uloha1.php"><?= TEXT_TASK1?></a></li>
+        <li><a href="uloha2.php"><?= TEXT_TASK2?></a></li>
+        <li><a class=active href="uloha3.php"><?= TEXT_TASK3?></a></li>
         <a class="logout" href="uloha3.php?logout=1"><img src="img/turn-off.png" title="Log out"></a>
         <a class="lang" href="uloha3.php?lang=sk"><img class=langimg src="img/sk.png" title="SK"></a>
         <a class="lang" href="uloha3.php?lang=en"><img class=langimg src="img/uk.png" title="EN"></a>
     </ul>
 
-    <section>
+    <section>   
+        <?php
+            if (isAdmin($_SESSION['user'],$mysqli)) {
+
+            }
+            if (!isAdmin($_SESSION['user'],$mysqli)) {
+                echo TEXT_ADMINONLY;
+            }
+        ?>
         <!-- Code here -->
         <?php echo "<h1>" . TEMPLATE . "</h1>" ?>
         <?php
@@ -94,5 +109,18 @@
     <!-- Include the Quill library -->
     <script src="uloha3.js"></script>
 </body>
-
 </html>
+
+<?php
+function isAdmin($name,$mysqli) {
+
+    $query = "SELECT id, login, password
+                      FROM admins
+                      WHERE login='".$name."'";
+    $result = $mysqli->query($query);
+    if(mysqli_num_rows($result)==1) {
+        return true;
+    }
+    else return false;
+}
+?>

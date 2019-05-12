@@ -1,6 +1,13 @@
 <?php
     session_start();
 
+    include "config.php";
+    $mysqli = new mysqli($hostname,$username,$password,$db);
+    if ($mysqli->connect_error) {
+        die('Connect Error (' . $mysqli->connect_errno . ')' . $mysqli->connect_error);
+    }
+    $mysqli->set_charset("utf8");
+
     if(!isset($_SESSION['lang']) && (!isset($_GET['lang']) || $_GET['lang']=="sk")) {
         $_SESSION['lang']="sk";
     }
@@ -45,7 +52,31 @@
 
 <section>
     <!-- Code here -->
+    <?php
+    if (isAdmin($_SESSION['user'],$mysqli)) {
+
+    }
+
+    if (!isAdmin($_SESSION['user'],$mysqli)) {
+
+    }
+
+    ?>
 </section>
 
 </body>
 </html>
+
+<?php
+function isAdmin($name,$mysqli) {
+
+    $query = "SELECT id, login, password
+                      FROM admins
+                      WHERE login='".$name."'";
+    $result = $mysqli->query($query);
+    if(mysqli_num_rows($result)==1) {
+        return true;
+    }
+    else return false;
+}
+?>

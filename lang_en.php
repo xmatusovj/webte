@@ -29,3 +29,6 @@ define("ATTACHMENT", "Attachment");
 define("STUDENT_NAME", "Student name");
 define("DATE", "Date");
 define("TEMPLATE_ID", "Template ID");
+define("TEXT_ADMINONLY", "Admin only");
+define("TEXT_CHOOSEYEAR", "Choose year");
+?>
