@@ -195,3 +195,12 @@ img.langimg {
     display: inline-block;
     max-width: 19px;
 }
+
+h1 {
+    font-size: 20px;
+}
+
+.sendEmailContainer input {
+    display: block;
+    margin-bottom: 15px;
+}
