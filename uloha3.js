@@ -1,9 +1,7 @@
 var quill
-function onLoad() {
-  quill = new Quill('#editor', {
-    theme: 'snow'
-  })
-}
+quill = new Quill('#editor', {
+  theme: 'snow'
+})
 function sendEmail() {
   let selectedSchema = document.getElementById('schemaSelect').value
   let typeSchema = document.getElementById('schemaType').value
@@ -47,26 +45,26 @@ function sendEmail() {
         return
       }
     }
-    formData.append('selectedSchema', selectedSchema)
-    formData.append('typeSchema', typeSchema)
-    formData.append('name', name)
-    formData.append('email', email)
-    formData.append('password', password)
-    formData.append('emailTitle', emailTitle)
-    formData.append('text', text)
-    formData.append('file', file)
-    formData.append('optionalFileToSend', optionalFileToSend)
-
-    fetch('./sender.php', {
-      method: 'post',
-      //enctype: 'multipart/form-data',
-      body: formData
-    })
-      .then(result => {
-        return result.json()
-      })
-      .then(data => {})
   }
+  formData.append('selectedSchema', selectedSchema)
+  formData.append('typeSchema', typeSchema)
+  formData.append('name', name)
+  formData.append('email', email)
+  formData.append('password', password)
+  formData.append('emailTitle', emailTitle)
+  formData.append('text', text)
+  formData.append('file', file)
+  formData.append('optionalFileToSend', optionalFileToSend)
+
+  fetch('./sender.php', {
+    method: 'post',
+    //enctype: 'multipart/form-data',
+    body: formData
+  })
+    .then(result => {
+      return result.json()
+    })
+    .then(data => {})
 }
 
 function saveSchema() {
@@ -76,7 +74,12 @@ function saveSchema() {
   //
   let name = document.getElementById('title').value
   window.location.href = encodeURI(
-    '/last/uloha3.php?mail=' + text + '&name=' + name + '&plain=' + plain
+    '/webte_zadanie/uloha3.php?mail=' +
+      text +
+      '&name=' +
+      name +
+      '&plain=' +
+      plain
   )
 }
 quill.on('text-change', function(delta, oldDelta, source) {
@@ -88,5 +91,8 @@ function selectSchema() {
 
   let typeSchema = document.getElementById('schemaType').value
   window.location.href =
-    '/last/uloha3.php?selectedSchema=' + selectedSchema + '&type=' + typeSchema
+    '/webte_zadanie/uloha3.php?selectedSchema=' +
+    selectedSchema +
+    '&type=' +
+    typeSchema
 }

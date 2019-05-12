@@ -31,4 +31,4 @@ define("DATE", "Datum");
 define("TEMPLATE_ID", "ID Sablony");
 define("TEXT_ADMINONLY", "Iba pre admina");
 define("TEXT_CHOOSEYEAR", "Vyber rok");
-?>
+define("SENT_EMAILS_HISTORY", "Historia poslanych emialov");

@@ -1,27 +1,27 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\PHPMailer;
 
 include_once('config.php');
-require 'vendor/autoload.php';
+    require 'vendor/autoload.php';
 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-mysqli_set_charset($conn, "utf8");
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    mysqli_set_charset($conn, "utf8");
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-if (isset($_GET['mail']) && isset($_GET['name']) && isset($_GET['plain'])) {
-    $sqlAddSchema = "INSERT INTO sablona(text, name, plain) VALUES('" . $_GET['mail'] . "', '" . $_GET['name'] ."', '" . rawurldecode($_GET['plain']) . "')";
-    // echo "query " . $sqSELECT * FROM `History` WHERE 1lAddToHistory;
-    if ($conn->query($sqlAddSchema) === true) {
-        echo "Pridanie schemy bolo uspesne.";
-    } else {
-        echo "Error: " . $sqlAddSchema . "<br>" . $conn->error;
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
     }
-}
+
+    if (isset($_GET['mail']) && isset($_GET['name']) && isset($_GET['plain'])) {
+        $sqlAddSchema = "INSERT INTO sablona(text, name, plain) VALUES('" . $_GET['mail'] . "', '" . $_GET['name'] ."', '" . rawurldecode($_GET['plain']) . "')";
+        // echo "query " . $sqSELECT * FROM `History` WHERE 1lAddToHistory;
+        if ($conn->query($sqlAddSchema) === true) {
+            echo "Pridanie schemy bolo uspesne.";
+        } else {
+            echo "Error: " . $sqlAddSchema . "<br>" . $conn->error;
+        }
+    }
 
     $sqlGetSchema = "SELECT * FROM sablona";
     $resultGetSchema = $conn->query($sqlGetSchema);
@@ -67,71 +67,3 @@ if (isset($_GET['mail']) && isset($_GET['name']) && isset($_GET['plain'])) {
             <p><br></p>
            </div>";
     }
-
-    if (isset($_GET['send']) && isset($_GET['csv'])) {
-        // parse the csv
-        // $csv = $_GET['csv'];
-        // echo $csv;
-        // $headerNum = 0;
-        // $data = [];
-        // for ($i=0; $i < strlen($_GET['csv']); $i++) {
-        //     if ($header === false) {
-        //         if ($csv[$i] === ';') {
-        //             // echo "AKRANSOOO ";
-        //             $headerNum++;
-        //         }
-        //         if ($csv[$i6 === '\n']) {
-        //             $header = true;
-        //         }
-        //     } else {
-        //         if($csv[$i] === ';') {
-        //             $data[]
-        //         }
-        //     }
-        // }
-
-
-        // $mail = new PHPMailer;
-        // $mail->isSMTP();
-        // $mail->CharSet = 'UTF-8';
-        // // $mail->SMTPDebug = 2;
-        // $mail->Host = 'mail.stuba.sk';
-        // $mail->Port = 587;
-        // $mail->SMTPAuth = true;
-        // $mail->Username = $_GET['name'];
-        // $mail->Password = $_GET['password'];
-        // $mail->setFrom($_GET['name']);
-        // $mail->addAddress('xmaloch@is.stuba.sk', 'Receiver Name');
-        // $mail->Subject = 'PHPMailer SMTP message';
-        // // $mail->Body = 'Go fk urself';
-        // $mail->msgHTML($_GET['text']);
-        // $mail->AltBody = 'This is a plain text message body';
-        // $mail->addAttachment('test.txt');
-        // if (!$mail->send()) {
-        //     echo 'Mailer Error: ' . $mail->ErrorInfo;
-        // } else {
-        //     echo 'Message sent!';
-        // }
-    }
-
-            // $mail = new PHPMailer;
-        // $mail->isSMTP();
-        // // $mail->SMTPDebug = 2;
-        // $mail->Host = 'mail.stuba.sk';
-        // $mail->Port = 587;
-        // $mail->SMTPAuth = true;
-        // $mail->Username = 'xmaloch@stuba.sk';
-        // $mail->Password = 'Sac.kus.6.hit';
-        // $mail->setFrom('xmaloch@is.stuba.sk', 'Jozef Maloch');
-        // $mail->addReplyTo('reply-box@hostinger-tutorials.com', 'Your Name');
-        // $mail->addAddress('xmaloch@is.stuba.sk', 'Receiver Name');
-        // $mail->Subject = 'PHPMailer SMTP message';
-        // // $mail->Body = 'Go fk urself';
-        // $mail->msgHTML($_GET['mail']);
-        // $mail->AltBody = 'This is a plain text message body';
-        // $mail->addAttachment('test.txt');
-        // if (!$mail->send()) {
-        //     echo 'Mailer Error: ' . $mail->ErrorInfo;
-        // } else {
-        //     echo 'Message sent!';
-        // }

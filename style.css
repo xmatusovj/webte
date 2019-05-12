@@ -208,3 +208,7 @@ h1 {
     display: block;
     margin-bottom: 15px;
 }
+
+#editor {
+    height: 300px;
+}

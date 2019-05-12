@@ -31,4 +31,4 @@ define("DATE", "Date");
 define("TEMPLATE_ID", "Template ID");
 define("TEXT_ADMINONLY", "Admin only");
 define("TEXT_CHOOSEYEAR", "Choose year");
-?>
+define("SENT_EMAILS_HISTORY", "History of sent emails");
