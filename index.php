@@ -19,11 +19,11 @@
     if (isset($_GET["logout"]) && $_GET["logout"]==1) {
         session_unset();
         session_destroy();
-        // header("Location: https://147.175.121.210:4493/webte_zadanie/login.php");
+        header("Location: https://147.175.121.210:4493/webte_zadanie/login.php");
     }
 
     if (!isset($_SESSION['user'])) {
-        // header("Location: https://147.175.121.210:4493/webte_zadanie/login.php");
+        header("Location: https://147.175.121.210:4493/webte_zadanie/login.php");
     }
 ?>
 
