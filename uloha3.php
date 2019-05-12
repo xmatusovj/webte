@@ -38,7 +38,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="language" content="<?php echo $_SESSION['lang'] ?>">
-    <title><?php= TEXT_TITLE?></title>
+    <title><?= TEXT_TITLE?></title>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
