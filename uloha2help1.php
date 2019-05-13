@@ -34,5 +34,5 @@ echo "<hr>";
 	$conn->close();
 
 
-header("Location:myuloha2.php");
+header("Location:uloha2.php");
 ?>
