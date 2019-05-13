@@ -3,6 +3,7 @@
 login student - AIS  
 login admin - admin/admin12345  
 
+https://github.com/simonbengtsson/jsPDF-AutoTable
 
 ## ADMIN CODE
 ```php
