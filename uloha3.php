@@ -43,6 +43,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="fileDownloadHandler.js"></script>
+    <script src="sorttable.js"></script>
 </head>
 
 <body onload="fileDownloadHandler()" onunload="destroy_session()">

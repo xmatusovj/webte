@@ -14,7 +14,7 @@ include_once('config.php');
 
     $sqlGetEmailHistory = "SELECT * FROM email";
     $resultGetEmailHistory = $conn->query($sqlGetEmailHistory);
-    echo "<table>";
+    echo "<table class='sortable'>";
     echo "<tr>";
     echo "<th>" . STUDENT_NAME . "</th>";
     echo "<th>" . EMAIL_SUBJECT . "</th>";
