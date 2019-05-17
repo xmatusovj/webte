@@ -54,6 +54,66 @@
     <!-- Code here -->
     <?php
     if (isAdmin($_SESSION['user'],$mysqli)) {
+    //dorobit jazyk
+    	echo '<link rel="stylesheet" href="uloha2styly.css">';
+		include "config.php";
+
+		echo '
+		<fieldset>
+		<legend>Pridaj subor</legend>
+		<form action="uloha2vloz.php" method="post" enctype="multipart/form-data">
+			Rok:
+			<select name="rok">
+				<option value="2016/2017">2016/2017</option>
+				<option value="2017/2018">2017/2018</option>
+				<option value="2018/2019">2018/2019</option>
+		  	</select><br>
+		  	Nazov predmetu:
+		  	<input type="text" name="predmet" value="predmet"><br>
+		    Vlozit subor:
+		    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+			Oddelovac:
+			<select name="oddelovac">
+				<option value=",">,</option>
+				<option value=";">;</option>
+		  	</select><br>
+		    <input type="submit" name="submit">
+		</form>
+		</fieldset>
+		';
+
+		$conn = new mysqli($servername, $username, $password, $dbname);
+	    // Check connection
+	    if ($conn->connect_error) {
+	        die("Connection failed: " . $conn->connect_error);
+	    } 
+
+	    
+
+		echo '
+		<fieldset>
+		<legend>Rozdelenie bodov</legend>
+		<form action="uloha2body.php" method="post" enctype="multipart/form-data">
+			Rok:
+			<select name="rok">';
+			$sql = "SELECT DISTINCT `rok`FROM `student` WHERE 1";    
+       		$result = $conn->query($sql);
+       		while(list($rok) = mysqli_fetch_row($result)){
+				echo '<option value="'.$rok.'">'.$rok.'</option>';
+		  	}
+		  	echo'</select><br>
+		  	Nazov predmetu:<select name="predmet">';
+		  	$sql = "SELECT DISTINCT `predmet`FROM `student` WHERE 1";    
+        	$result = $conn->query($sql);
+		  	while(list($predmet) = mysqli_fetch_row($result)){
+				echo '<option value="'.$predmet.'">'.$predmet.'</option>';
+		  	}		  	
+		  	echo'
+		  	</select><br>
+		    <input type="submit" name="submit" value="Zobraz">
+		</form>
+		</fieldset>
+		';
 
     }
 
