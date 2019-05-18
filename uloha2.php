@@ -125,13 +125,58 @@
 			//require_once('config.php');
 			include "config.php";
 
+			//MY new kod zac
 
+				/**/
+				/*
+				echo "<hr><hr>";
+				echo "_SESSION['user']: ";
+				echo $_SESSION['user'];
+				echo "<hr><hr>";
+				echo "<hr><hr>";
+				echo "_SESSION['useridu2']: ";
+				echo $_SESSION['useridu2'];
+				echo "<hr><hr>";
+				/**/
 
+				$prihlaseny  = $_SESSION['user'];
 
-			 $prihlaseny  = "meno1";
+				$idPrihlaseneho = 1;
+				$idPrihlaseneho =  $_SESSION['useridu2'];
+
+				/*
+				echo "<hr>ID:";
+				echo $idPrihlaseneho;
+				echo "<hr>";
+				*/
+
+				//$prihlaseny = "neznamy";
+
+				try {    
+					$db01234444 = new PDO("mysql:host=$servername;dbname=$dbu2", $username, $password);
+					$db01234444->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					$query01234444 = "SELECT meno FROM student WHERE id = '".$idPrihlaseneho."' ";
+					$stmt01234444 = $db01234444->query($query01234444); 
+
+				
+					$row01234444 = $stmt01234444->fetch(PDO::FETCH_ASSOC);
+					$prihlaseny = $row01234444['meno'];				
+
+				}
+				catch(PDOException $e)
+				{
+					//echo "<br>VYSKYTLA SA CHYBA <br>";
+				}
+
+				//$prihlaseny  = $_SESSION['user'];
 			 
-			 echo U2_PRIHLASENY;
-			 echo ": " . $prihlaseny . "<hr>";
+
+				//$prihlaseny  = "meno1";
+				 
+				echo U2_PRIHLASENY;
+				echo ": " . $prihlaseny . " (AIS login: " . $_SESSION['user'] . ") (AIS ID: " . $_SESSION['useridu2'] . ")<hr>";
+
+			//MY new kod kon
 
 			 $hesloU2;
 			 $idStudentaZac;
