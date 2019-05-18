@@ -60,6 +60,7 @@
                 $entry = ldap_first_entry($ldapconn, $search);
 
                 $_SESSION["user"]=ldap_get_values($ldapconn, $entry, "uid")[0];
+				$_SESSION["useridu2"]=ldap_get_values($ldapconn, $entry, "uisid")[0];					//k prihlaseniu v ulohe 2
                 header("Location: https://147.175.121.210:4493/webte_zadanie/index.php");
             }
             else $error = "Chyba: Nesprávne prihlasovacie údaje";
