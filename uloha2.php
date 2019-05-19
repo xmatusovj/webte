@@ -60,24 +60,24 @@
 
 		echo '
 		<fieldset>
-		<legend>Pridaj subor</legend>
+		<legend>'.U2_VLOZIT_SUBOR.'</legend>
 		<form action="uloha2vloz.php" method="post" enctype="multipart/form-data">
-			Rok:
+			'.U2_ROK.':
 			<select name="rok">
 				<option value="2016/2017">2016/2017</option>
 				<option value="2017/2018">2017/2018</option>
 				<option value="2018/2019">2018/2019</option>
 		  	</select><br>
-		  	Nazov predmetu:
+		  	'.U2_PREDMET.':
 		  	<input type="text" name="predmet" value="predmet"><br>
-		    Vlozit subor:
+		    '.U2_VLOZIT_SUBOR.':
 		    <input type="file" name="fileToUpload" id="fileToUpload"><br>
-			Oddelovac:
+			'.U2_ODDELOVAC.':
 			<select name="oddelovac">
 				<option value=",">,</option>
 				<option value=";">;</option>
 		  	</select><br>
-		    <input type="submit" name="submit">
+		    <input type="submit" name="submit" value="'.TEXT_SUBMIT.'">
 		</form>
 		</fieldset>
 		';
@@ -92,9 +92,9 @@
 
 		echo '
 		<fieldset>
-		<legend>Rozdelenie bodov</legend>
+		<legend>'.U2_ZMENIT_BODY.'</legend>
 		<form action="uloha2body.php" method="post" enctype="multipart/form-data">
-			Rok:
+			'.U2_ROK.':
 			<select name="rok">';
 			$sql = "SELECT DISTINCT `rok`FROM `student` WHERE 1";    
        		$result = $conn->query($sql);
@@ -102,7 +102,7 @@
 				echo '<option value="'.$rok.'">'.$rok.'</option>';
 		  	}
 		  	echo'</select><br>
-		  	Nazov predmetu:<select name="predmet">';
+		  	'.U2_PREDMET.':<select name="predmet">';
 		  	$sql = "SELECT DISTINCT `predmet`FROM `student` WHERE 1";    
         	$result = $conn->query($sql);
 		  	while(list($predmet) = mysqli_fetch_row($result)){
@@ -110,7 +110,7 @@
 		  	}		  	
 		  	echo'
 		  	</select><br>
-		    <input type="submit" name="submit" value="Zobraz">
+		    <input type="submit" name="submit" value="'.TEXT_SUBMIT.'">
 		</form>
 		</fieldset>
 		';

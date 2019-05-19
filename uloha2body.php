@@ -20,13 +20,13 @@
     }
 
     if(isset($_GET["logout"]) && $_GET["logout"]==1) {
-        //session_unset();
-        //session_destroy();
-        //header("Location: https://147.175.121.210:4493/webte_zadanie/login.php");
+        session_unset();
+        session_destroy();
+        header("Location: https://147.175.121.210:4493/webte_zadanie/login.php");
     }
 
     if(!isset($_SESSION['user'])) {
-        //header("Location: https://147.175.121.210:4493/webte_zadanie/login.php");
+        header("Location: https://147.175.121.210:4493/webte_zadanie/login.php");
     }
 ?>
 
@@ -103,16 +103,16 @@
 	$result = $conn->query($sql);
 	list($timysuhlas) = mysqli_fetch_row($result);
 
-	echo 'Predmet: '.$predmet .'<br>Rok: '. $rok . '<br>
+	echo U2_PREDMET.': '.$predmet .'<br>'.U2_ROK.': '. $rok . '<br>
 	<fieldset>
-	<legend>Stats</legend>
-		Pocet studentov: '.$studenti.'<br>
-		Suhlasi: '.$suhlas.'<br>
-		Nesuhlasi: '.$nesuhlas.'<br>
-		Nevyjadrilo sa: '.($studenti - $suhlas -$nesuhlas).'<br>
-		Pocet timov: '.$timy.'<br>
-		Odsuhlasenych: '.$timysuhlas.'<br>
-		Nedsuhlasenych: '.($timy - $timysuhlas).'<br>
+	<legend>'.U2_STATS.'</legend>
+		'.U2_POCET_STUDENTOV.': '.$studenti.'<br>
+		'.U2_SUHLAS.': '.$suhlas.'<br>
+		'.U2_NESUHLAS.': '.$nesuhlas.'<br>
+		'.U2_NEHLASOVAL.': '.($studenti - $suhlas -$nesuhlas).'<br>
+		'.U2_POCET_TIMOV.': '.$timy.'<br>
+		'.U2_SUHLAST.': '.$timysuhlas.'<br>
+		'.U2_NESUHLAST.': '.($timy - $timysuhlas).'<br>
 	</fieldset>
 	';
 
@@ -123,14 +123,14 @@
 	$sql = "SELECT `tim` FROM `bodytim` WHERE predmet='".$predmet."' AND rok='".$rok."'";
 	$result = $conn->query($sql);
 	echo '<form action="#" method="post" enctype="multipart/form-data">
-	Tim: <select name="tim">';
+	'.U2_TEAM.': <select name="tim">';
 	while(list($tim) = mysqli_fetch_row($result)){
 			echo '<option value="'.$tim.'">'.$tim.'</option>';
   	}	
   	echo '</select>
     <input type="hidden" name="predmet" value="'.$predmet.'">
     <input type="hidden" name="rok" value="'.$rok.'">
-  	<input type="submit" name="submit" value="Zobraz">
+  	<input type="submit" name="submit" value="'.TEXT_SUBMIT.'">
   	</form>';
 
   	echo '<fieldset>';
@@ -162,7 +162,6 @@
 		<button id="SUHLAS" name="SUHLAS">I agree</button>
 		<button id="NESUHLAS" name="NESUHLAS">I disagree</button>
 		</fieldset>
-		<div id="sprava">len kontrola, treba potom zmazat</div>
 		';
 	}
   	

@@ -71,4 +71,14 @@ define("U2_NESUHLAS2", "Nesúhlasím");
 define("U2_PRIHLASIT_SA", "Prihlásiť sa");
 define("U2_ZLE_HESLO", "Zle heslo.");
 define("U2_PRIHLASENY_AJ_CEZ_HESLO", "Bol si prihlásený aj za pomoci hesla.");
+define("U2_VLOZIT_SUBOR", "Vlozit subor");
+define("U2_ROK", "Rok");
+define("U2_ODDELOVAC", "Oddelovac");
+define("U2_PREDMET", "Predmet");
+define("U2_STATS", "Štatistika");
+define("U2_SUHLAST", "Odsúhlasených");
+define("U2_NESUHLAST", "Neodsuhlasených");
+define("U2_POCET_TIMOV", "Počet tímov");
+define("U2_POCET_STUDENTOV", "Počet študentov");
+define("U2_TEAM", "Tím");
 ?>

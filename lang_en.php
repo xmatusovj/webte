@@ -71,4 +71,14 @@ define("U2_NESUHLAS2", "Disagree");
 define("U2_PRIHLASIT_SA", "Sing in");
 define("U2_ZLE_HESLO", "Wrong password.");
 define("U2_PRIHLASENY_AJ_CEZ_HESLO", "You were also logged in with a password.");
+define("U2_VLOZIT_SUBOR", "Insert file");
+define("U2_ROK", "Year");
+define("U2_ODDELOVAC", "Seperator");
+define("U2_PREDMET", "Subject");
+define("U2_STATS", "Stats");
+define("U2_SUHLAST", "Agreed");
+define("U2_NESUHLAST", "Not agreed");
+define("U2_POCET_TIMOV", "Number of teams");
+define("U2_POCET_STUDENTOV", "Number of students");
+define("U2_TEAM", "Team");
 ?>
