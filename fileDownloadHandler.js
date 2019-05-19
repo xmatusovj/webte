@@ -1,3 +1,5 @@
+lang = ''
+
 function fileDownloadHandler() {
   var file = document.getElementById('fileToUpload').files[0]
   var delimiter = document.getElementById('delimiter').value
@@ -7,12 +9,31 @@ function fileDownloadHandler() {
     'processedFileDownload'
   )
   if (delimiter == '') {
-    processedFileDownloadDiv.innerHTML = 'where is delimiter?'
+    const metas = document.getElementsByTagName('meta')
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute('name') === 'language') {
+        if (metas[i].getAttribute('content') === 'sk') {
+          lang = 'sk'
+          processedFileDownloadDiv.innerHTML = 'Nezadali ste delimiter.'
+        } else {
+          lang = 'en'
+          processedFileDownloadDiv.innerHTML = 'You havent set the delimiter.'
+        }
+        return
+      } else {
+        errorContainer.innerHTML = ''
+      }
+    }
+
     return
   }
   console.log(file)
   if (file == undefined) {
-    processedFileDownloadDiv.innerHTML = 'where is file?'
+    if (lang === 'sk') {
+      processedFileDownloadDiv.innerHTML = 'Nezadali ste CSV subor.'
+    } else {
+      processedFileDownloadDiv.innerHTML = 'You havent set the CSV file.'
+    }
     return
   }
 

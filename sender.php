@@ -151,8 +151,10 @@ require 'vendor/autoload.php';
                 // $mail->AltBody = 'This is a plain text message body';
                 $mail->addAttachment($_FILES["optionalFileToSend"]["tmp_name"], $_FILES["optionalFileToSend"]["name"]);
                 if (!$mail->send()) {
+                    http_response_code(400);
                     echo 'Mailer Error: ' . $mail->ErrorInfo;
                 } else {
+                    http_response_code(200);
                     echo 'Message sent!';
                     $time = new DateTime();
                     $sqlAddEmail = "INSERT INTO email(date, name, subject, sablona) 
@@ -210,6 +212,5 @@ require 'vendor/autoload.php';
     ));
 
 
-    http_response_code(200);
 
     echo json_encode($results);

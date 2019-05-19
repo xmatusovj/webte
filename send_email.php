@@ -36,10 +36,10 @@ include_once('config.php');
         }
         echo "</select>";
         echo "<select id='schemaType' onchange='selectSchema()'>";
-        if ($_GET['type'] === 'html') {
-            echo "<option value='html' selected='selected'>HTML</option><option value='plain'>plain</option>";
-        } else {
+        if ($_GET['type'] === 'plain') {
             echo "<option value='html'>HTML</option><option value='plain' selected='selected'>plain</option>";
+        } else {
+            echo "<option value='html' selected='selected'>HTML</option><option value='plain'>plain</option>";
         }
         echo "</select>";
     } else {

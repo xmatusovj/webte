@@ -2,6 +2,8 @@ var quill
 quill = new Quill('#editor', {
   theme: 'snow'
 })
+
+let lang = ''
 function sendEmail() {
   let selectedSchema = document.getElementById('schemaSelect').value
   let typeSchema = document.getElementById('schemaType').value
@@ -32,19 +34,22 @@ function sendEmail() {
   if (name === '' || email === '' || password === '' || file === undefined) {
     let errorContainer = document.getElementById('errorContainer')
     const metas = document.getElementsByTagName('meta')
-
     for (let i = 0; i < metas.length; i++) {
-      if (metas[i].getAttribute('name') == 'language') {
-        if (metas[i].getAttribute('content') === 'sk')
+      if (metas[i].getAttribute('name') === 'language') {
+        if (metas[i].getAttribute('content') === 'sk') {
+          lang = 'sk'
           errorContainer.innerHTML =
-            'Nezadali see meno odosielatela, email odosielatela, heslo odosielatela, subjekt emailu, alebo subor s datami.'
-        else {
+            'Nezadali ste meno odosielatela, email odosielatela, heslo odosielatela, subjekt emailu, alebo subor s datami.'
+        } else {
+          lang = 'en'
           errorContainer.innerHTML =
             'You havent set senders name, senders email, senders password, email subject or file with data.'
         }
-        return
       }
     }
+    return
+  } else {
+    errorContainer.innerHTML = ''
   }
   formData.append('selectedSchema', selectedSchema)
   formData.append('typeSchema', typeSchema)
@@ -56,12 +61,33 @@ function sendEmail() {
   formData.append('file', file)
   formData.append('optionalFileToSend', optionalFileToSend)
 
+  if (lang === 'sk') {
+    errorContainer.innerHTML = 'Odosiela sa...'
+  } else {
+    errorContainer.innerHTML = 'Sending...'
+  }
   fetch('./sender.php', {
     method: 'post',
     //enctype: 'multipart/form-data',
     body: formData
   })
     .then(result => {
+      console.log(result)
+      if (result.status === 200) {
+        if (lang === 'sk') {
+          errorContainer.innerHTML = 'Email/y boli úspešne odoslané.'
+        } else {
+          errorContainer.innerHTML = 'The emails have been successfuly sent.'
+        }
+      } else {
+        if (lang === 'sk') {
+          errorContainer.innerHTML =
+            'Nastala chyba a email/y neboli úspešne odoslané.'
+        } else {
+          errorContainer.innerHTML =
+            'There was error in sending of the email/s.'
+        }
+      }
       return result.json()
     })
     .then(data => {})

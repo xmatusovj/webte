@@ -172,6 +172,10 @@ input:not(:focus) {
     margin: 5px;
 }
 
+#errorContainer, #processedFileDownload {
+    color: red;
+}
+
 #invisible {
     display: none !important;
 }
