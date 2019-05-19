@@ -12,7 +12,7 @@ require 'vendor/autoload.php';
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset: UTF-8");
     $results["result"]=array();
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $db);
     mysqli_set_charset($conn, "utf8");
 
     // Check connection

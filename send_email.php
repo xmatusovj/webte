@@ -5,7 +5,7 @@ include_once('config.php');
     require 'vendor/autoload.php';
 
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $db);
     mysqli_set_charset($conn, "utf8");
 
     // Check connection

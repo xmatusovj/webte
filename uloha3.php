@@ -2,7 +2,7 @@
     session_start();
     
     include "config.php";
-    $mysqli = new mysqli($hostname, $username, $password, $db);
+    $mysqli = new mysqli($servername, $username, $password, $db);
     if ($mysqli->connect_error) {
         die('Connect Error (' . $mysqli->connect_errno . ')' . $mysqli->connect_error);
     }
@@ -62,6 +62,7 @@
             if (isAdmin($_SESSION['user'], $mysqli)) {
             }
             if (!isAdmin($_SESSION['user'], $mysqli)) {
+                header("Location: https://147.175.121.210:4493/webte_zadanie/index.php");
                 echo TEXT_ADMINONLY;
             }
         ?>

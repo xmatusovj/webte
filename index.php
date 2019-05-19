@@ -68,9 +68,13 @@
             <td>Kristian Kalivoda + Jozef Maloch</td>
             <td><?= TEXT_TASK3?></td>
         </tr>
+        <tr>
+            <td>Všetci</td>
+            <td><?= "CSS + " . TEXT_MULTILANG ?></td>
+        </tr>
     </table><br>
     
-    <a href=""><?= TEXT_DOCUMENTATION?></a>
+    <a href="Technická dokumentácia.pdf"><?= TEXT_DOCUMENTATION ?></a>
 </section>
 
 </body>

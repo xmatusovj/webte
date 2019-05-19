@@ -2,7 +2,7 @@
     session_start();
 
     include "config.php";
-    $mysqli = new mysqli($hostname,$username,$password,$db);
+    $mysqli = new mysqli($servername,$username,$password,$db);
     if ($mysqli->connect_error) {
         die('Connect Error (' . $mysqli->connect_errno . ')' . $mysqli->connect_error);
     }
@@ -77,7 +77,7 @@
 	$predmet = $_POST['predmet'];
 	$rok = $_POST['rok'];    
 
-	$conn = new mysqli($servername, $username, $password, $dbname);
+	$conn = new mysqli($servername, $username, $password, $dbu2);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);

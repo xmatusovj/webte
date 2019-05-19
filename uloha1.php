@@ -2,7 +2,7 @@
     session_start();
 
     include "config.php";
-    $mysqli = new mysqli($hostname,$username,$password,$db);
+    $mysqli = new mysqli($servername,$username,$password,$db);
     if ($mysqli->connect_error) {
         die('Connect Error (' . $mysqli->connect_errno . ')' . $mysqli->connect_error);
     }
@@ -130,7 +130,7 @@
     <form action='newYearFolder.php' method='POST' enctype='multipart/form-data'>
     <?php
     echo "<h2>".TEXT_CREATEFOLDER."</h2><br>";
-    echo TEXT_CHOOSEYEAR . ": <input type='text' pattern='[0-9]{4}[+/][0-9]{4}' name='folderName' placeholder='YYYY/YYYY'>";
+    echo TEXT_CHOOSEYEAR . ": <input type='text' pattern='[0-9]{4}[+/][0-9]{4}' name='folderName' placeholder='YYYY/YYYY' required>";
     echo "<input type='submit' name='newFolderSubmit' value='".TEXT_SUBMIT."'>";
     ?>
     </form>
@@ -150,6 +150,11 @@
                 echo "$('#sectionTables').css('display', 'block');";
                 echo "$('#sectionDelete').css('display', 'block');";
                 echo "$('#sectionNewYear').css('display', 'block');";
+            }
+            else {
+                echo "$('#sectionTables').remove();";
+                echo "$('#sectionDelete').remove();";
+                echo "$('#sectionNewYear').remove();";
             }
         ?>
 
@@ -199,7 +204,7 @@
     });
 </script>
 
-<span id="invisible"><?= $_SESSION['user']; ?></span>
+<span id="invisible"><?= $_SESSION["useridu2"]; ?></span>
 </body>
 </html>
 

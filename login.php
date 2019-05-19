@@ -15,7 +15,7 @@
     header('Content-Type: text/html; charset=utf-8');
     include "config.php";
 
-    $mysqli = new mysqli($hostname,$username,$password,$db);
+    $mysqli = new mysqli($servername,$username,$password,$db);
     if ($mysqli->connect_error) {
         die('Connect Error (' . $mysqli->connect_errno . ')' . $mysqli->connect_error);
     }

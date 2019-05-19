@@ -4,7 +4,7 @@
     error_reporting(E_ALL);
 
 include_once('config.php');
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($servername, $username, $password, $db);
     mysqli_set_charset($conn, "utf8");
 
     // Check connection
