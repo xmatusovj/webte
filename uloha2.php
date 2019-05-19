@@ -55,6 +55,12 @@
     <?php
     if (isAdmin($_SESSION['user'],$mysqli)) {
     //dorobit jazyk
+
+		ini_set('display_errors', 1);
+		ini_set('display_startup_errors', 1);
+		error_reporting(E_ALL);
+
+	
     	echo '<link rel="stylesheet" href="uloha2styly.css">';
 		include "config.php";
 
