@@ -92,7 +92,7 @@
             <p id="errorContainer"></p>
             <input id="name" placeholder="<?php echo SENDER_NAME?>">
             <input id="email" placeholder="<?php echo SENDER_EMAIL?>">
-            <input id="password" placeholder="<?php echo SENDER_PASSWORD?>">
+            <input id="password" type="password" placeholder="<?php echo SENDER_PASSWORD?>">
             <input id="emailTitle" placeholder="<?php echo EMAIL_SUBJECT?>">
             <div>
                 <label><?php echo FILE_WITH_DATA ?></label><input id="file" type="file" placeholder="file">
